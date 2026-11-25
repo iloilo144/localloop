@@ -1,0 +1,226 @@
+.lend {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.lend__head {
+  max-width: 42rem;
+}
+
+.lend__head h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.lend__head .accent {
+  color: var(--green);
+}
+
+.lend__head p {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.lend__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: 2.5rem;
+  align-items: start;
+}
+
+.lend__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.lend__form > fieldset {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 1.75rem;
+  border: 0;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.lend__form > fieldset > legend {
+  float: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.lend__step {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--sunk);
+  font-size: 0.9rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.lend__step.is-done {
+  background: var(--green);
+  color: #fff;
+}
+
+.lend__form fieldset.field {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.segmented {
+  display: inline-flex;
+  gap: 0.2rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: var(--sunk);
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.segmented label {
+  position: relative;
+  cursor: pointer;
+}
+
+.segmented input {
+  position: absolute;
+  opacity: 0;
+}
+
+.segmented__pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.segmented__label {
+  position: relative;
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.segmented input:checked ~ .segmented__label {
+  color: #fff;
+}
+
+.segmented input:focus-visible ~ .segmented__label {
+  outline: 2.5px solid var(--green);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+.lend__meter {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--sunk);
+  overflow: hidden;
+}
+
+.lend__meter span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--green);
+  transform-origin: left;
+}
+
+.lend__terms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.lend__submit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.lend__preview {
+  position: sticky;
+  top: 6rem;
+}
+
+.lend__preview-label {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.tilt {
+  perspective: 900px;
+}
+
+.lend__card {
+  position: relative;
+  padding: 0.8rem 0.8rem 1.25rem;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.lend__img {
+  aspect-ratio: 4 / 3.4;
+  overflow: hidden;
+  border-radius: var(--r);
+  transform: translateZ(30px);
+}
+
+.lend__img > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lend__card h2 {
+  margin: 1rem 0.4rem 0;
+  font-size: 1.4rem;
+  overflow-wrap: anywhere;
+  transform: translateZ(20px);
+}
+
+.lend__card p {
+  margin: 0.3rem 0.4rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* soft light that slides across the card as it tilts */
+.tilt__glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.45) var(--gx), transparent 70%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .lend__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lend__preview {
+    position: static;
+    order: -1;
+    max-width: 22rem;
+  }
+}
