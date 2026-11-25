@@ -4,7 +4,7 @@
 lend, borrow and swap everyday things (drills, tents, cameras, the good blender) instead of
 each buying their own.
 
-> Live demo: _add your Vercel URL here_ · Part of [my portfolio](https://your-portfolio-url.vercel.app)
+> Live demo: [localloop-gamma.vercel.app](https://localloop-gamma.vercel.app) · Part of [my portfolio](https://portfolio-beta-gilt-2tyi5pjln6.vercel.app)
 
 ![LocalLoop home page](docs/screenshot.jpg)
 
