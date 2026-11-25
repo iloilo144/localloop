@@ -407,7 +407,8 @@
 
 @media (max-width: 960px) {
   .hero {
-    grid-template-columns: 1fr;
+    /* minmax(0, …) lets the column shrink below its content, so the hero never pushes past the screen */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .shelves {
